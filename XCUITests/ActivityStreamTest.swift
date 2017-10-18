@@ -311,8 +311,11 @@ class ActivityStreamTest: BaseTestCase {
             navigator.openURL(urlString: "http://walmart.com")
             waitUntilPageLoad()
             navigator.openURL(urlString: "http://zara.com")
+            waitUntilPageLoad()
             navigator.openURL(urlString: "http://twitter.com")
+            waitUntilPageLoad()
             navigator.openURL(urlString: "http://instagram.com")
+            waitUntilPageLoad()
         }
         navigator.goto(URLBarOpen)
         waitforExistence(pagecontrolButton)
