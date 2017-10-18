@@ -72,7 +72,7 @@ class ToolbarTests: BaseTestCase {
         app.collectionViews.cells[website1["label"]!].swipeRight()
 
         // Go Back to other tab to see if all buttons are disabled.
-
+        navigator.nowAt(BrowserTab)
         XCTAssertFalse(app.buttons["URLBarView.backButton"].isEnabled)
         XCTAssertFalse(app.buttons["Forward"].isEnabled)
     }

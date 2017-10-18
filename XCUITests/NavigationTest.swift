@@ -233,7 +233,11 @@ class NavigationTest: BaseTestCase {
         navigator.browserPerformAction(.toggleDesktopOption)
 
         // After reloading a website the desktop view should be kept
-        app.buttons["TabToolbar.stopReloadButton"].tap()
+        if iPad() {
+                app.buttons["Reload"].tap()
+        } else {
+                app.buttons["TabToolbar.stopReloadButton"].tap()
+        }
         waitForValueContains(app.textFields["url"], value: urlAddOns)
         checkDesktopView()
 
@@ -243,7 +247,11 @@ class NavigationTest: BaseTestCase {
         waitForValueContains(app.textFields["url"], value: urlAddOns)
 
         // After reloading a website the mobile view should be kept
-        app.buttons["TabToolbar.stopReloadButton"].tap()
+        if iPad() {
+            app.buttons["Reload"].tap()
+        } else {
+            app.buttons["TabToolbar.stopReloadButton"].tap()
+        }
         checkMobileView()
     }
 
